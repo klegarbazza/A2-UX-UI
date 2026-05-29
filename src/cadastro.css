@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #0a0a0a;
+    color: #fafafa;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 42rem;
+}
+
+.register-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.5;
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fafafa;
+    line-height: 1.5;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a3a3a3;
+    pointer-events: none;
+}
+
+.input {
+    width: 100%;
+    height: 3rem;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 1px solid #404040;
+    border-radius: 0.5rem;
+    background-color: #1a1a1a;
+    color: #fafafa;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    transition: all 0.2s;
+}
+
+.input.password-input {
+    padding-right: 2.75rem;
+}
+
+.input::placeholder {
+    color: #737373;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #737373;
+    box-shadow: 0 0 0 2px rgba(115, 115, 115, 0.3);
+}
+
+.input:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Toggle Password Button */
+.toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #a3a3a3;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #fafafa;
+}
+
+.toggle-password:focus {
+    outline: none;
+}
+
+.eye-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Error Message */
+.error-message {
+    font-size: 0.875rem;
+    color: #ef4444;
+    min-height: 1.25rem;
+    line-height: 1.25rem;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #fafafa;
+    color: #1a1a1a;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: rgba(250, 250, 250, 0.9);
+}
+
+.btn-submit:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(115, 115, 115, 0.5);
+}
+
+.btn-submit:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.btn-cancel {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0.75rem 2rem;
+    border: 1px solid #404040;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: #fafafa;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancel:hover {
+    background-color: #262626;
+}
+
+.btn-cancel:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(115, 115, 115, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .register-card {
+        gap: 1.5rem;
+    }
+    
+    body {
+        padding: 1rem;
+    }
+}
